@@ -82,10 +82,10 @@ class CaloriesCalculator(Calculator):
 
 
 class Record:
-    def __init__(self, amount, comment, date=''):
+    def __init__(self, amount, comment, date=None):
         self.amount = amount
         self.comment = comment
-        if date == '':
+        if date is None:
             self.date = dt.datetime.now().date()
         else:
             self.date = dt.datetime.strptime(date, "%d.%m.%Y").date()
